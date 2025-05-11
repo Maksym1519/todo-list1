@@ -5,7 +5,7 @@
 .yarn/install-state.gz
 
 # Сборка и кэш Next.js
-/.next/
+#/.next/
 /out/
 
 # Логи
