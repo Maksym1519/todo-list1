@@ -5,7 +5,6 @@ import TodoForm from "../TodoForm/TodoForm";
 const TodoList = () => {
   const [inputValue, setInputValue] = useState("");
   const [todoItems, setTodoItems] = useState([]);
-  console.log(todoItems)
 
   const getValue = (e) => {
     setInputValue(e.target.value);
@@ -13,11 +12,16 @@ const TodoList = () => {
 
   const addNewTodo = () => {
     if (inputValue.trim() !== "") {
+      const currentDate = new Date(); 
       setTodoItems([
         ...todoItems,
-        { id: Date.now(), title: inputValue },
+        {
+          id: Date.now(),
+          title: inputValue,
+          createdAt: currentDate, 
+        },
       ]);
-      setInputValue(""); 
+      setInputValue("");
     }
   };
 
@@ -25,6 +29,11 @@ const TodoList = () => {
     setTodoItems(todoItems.filter((item) => item.id !== id)); 
   };
 
+const handleCurrentDate = () => {
+  const date = new Date()
+  setCurrentDate(date)
+}
+ 
   return (
     <div className="todo-list flex flex-col gap-8 bg-white w-full p-8">
       <TodoForm
@@ -37,6 +46,7 @@ const TodoList = () => {
           key={item.id}
           title={item.title}
           onDelete={() => deleteTodo(item.id)} 
+          createdAt={item.createdAt}
         />
       ))}
     </div>
