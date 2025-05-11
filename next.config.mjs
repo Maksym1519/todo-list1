@@ -4,6 +4,7 @@ const nextConfig = {
   trailingSlash: true, 
   basePath: '', 
   assetPrefix: '', 
+  devIndicators: false
 };
 
 export default nextConfig;
