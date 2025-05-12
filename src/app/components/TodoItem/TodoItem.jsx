@@ -17,7 +17,7 @@ const TodoItem = ({ title, onDelete, createdAt }) => {
 
   return (
     <div className="todo-item flex gap-4 items-center border border-gray-300 rounded-md px-4 py-2 dark:text-black">
-      <Input type={'checkbox'} className='w-[30px] h-[30px'/>
+      <Input type={'checkbox'} className='w-[30px] h-[30px]'/>
       <p className="w-full">
         {title}
       </p>

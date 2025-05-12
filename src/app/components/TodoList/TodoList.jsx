@@ -35,7 +35,7 @@ const handleCurrentDate = () => {
 }
  
   return (
-    <div className="todo-list flex flex-col gap-8 bg-white w-full p-8">
+    <div className="todo-list flex flex-col gap-8 bg-white w-full p-8 dark:bg-gray-500">
       <TodoForm
         getValue={getValue}
         inputValue={inputValue}
